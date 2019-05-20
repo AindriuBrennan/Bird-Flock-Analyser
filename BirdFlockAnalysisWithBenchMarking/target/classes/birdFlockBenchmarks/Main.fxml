@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="birdFlockBenchmarks.MainController">
+   <children>
+      <Button fx:id="newImage" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#newImage" text="New Image" />
+      <Button fx:id="countBirds" layoutX="261.0" layoutY="582.0" mnemonicParsing="false" onAction="#doTheThings" text="Count Birds" />
+      <Button layoutX="27.0" layoutY="581.0" mnemonicParsing="false" onAction="#blackAndWhiteImage" text="Black &amp; White" />
+      <Button layoutX="158.0" layoutY="581.0" mnemonicParsing="false" onAction="#OGImage" text="OG Image" />
+      <Button fx:id="BirdBoxer" layoutX="523.0" layoutY="582.0" mnemonicParsing="false" onAction="#boxingBirds" prefHeight="25.0" prefWidth="77.0" text="Box Birds" />
+      <TextField fx:id="birdNumbers" layoutX="355.0" layoutY="582.0" />
+      <Slider fx:id="redSlider" blockIncrement="0.01" layoutX="180.0" layoutY="20.0" max="1.0" min="-1.0" onMouseReleased="#sliderChange" />
+      <Slider fx:id="greenSlider" blockIncrement="0.01" layoutX="383.0" layoutY="20.0" max="1.0" min="-1.0" onMouseReleased="#sliderChange" />
+      <Slider fx:id="blueSlider" blockIncrement="0.01" layoutX="614.0" layoutY="20.0" max="1.0" min="-1.0" onMouseReleased="#sliderChange" />
+      <AnchorPane fx:id="anchor" layoutX="107.0" layoutY="49.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <StackPane prefHeight="513.0" prefWidth="721.0">
+               <children>
+                  <Pane prefHeight="386.0" prefWidth="645.0">
+                     <children>
+                        <GridPane prefHeight="520.0" prefWidth="725.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <ImageView fx:id="imageDisplay" fitHeight="520.0" fitWidth="725.0" onDragDetected="#doTheThings" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+      <Button layoutX="614.0" layoutY="582.0" mnemonicParsing="false" onAction="#clearThePane" text="Clear" />
+     
+   </children>
+</AnchorPane>
